@@ -1,0 +1,10 @@
+h1=locals.title
+#container ...showing students
+#articles
+	#students
+		- each student in locals.students
+		  span= student.firstName 
+		  span= student.lastName
+		  p
+  
+a.button(href='/students/new') Create a New Student

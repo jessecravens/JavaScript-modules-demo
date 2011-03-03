@@ -1,0 +1,15 @@
+.page
+  h3 New Article
+  p
+  form(method='post')
+	  label Name:
+	  input(type='text', name='locals[name]', value=locals.name || '')
+	  br
+	  br
+	  label Body:
+	  input(type='text', name='locals[body]', value=locals.body || '')
+	  br
+	  br
+	  input(type='submit', value='Save')
+br
+a.button(href='/articles') All Articles

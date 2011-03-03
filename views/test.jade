@@ -1,0 +1,11 @@
+h1=locals.title
+h2=locals.subtitle
+#container.yui3-g
+	#ssjs-modules.yui3-u-1-2
+		h3 Server Side Loaded Modules ( CommonJS Module System ):
+		ul.moduleList
+		  - each module in locals.modules
+		    li.moduleListItem= module
+	#csjs-modules.yui3-u-1-2
+		h3 Client Side Loaded Modules ( YUI3 Module System ):
+		// #csjs-modules-content

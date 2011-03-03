@@ -1,0 +1,15 @@
+h1=locals.title
+h3 articles/index.jade - node template engine
+#container ...showing basic article objects
+#articles
+	ul
+		- each article in locals.articles
+		  li= article.name
+		  ul
+		    li= article.body  
+
+//make this a partial later
+#loginDiv
+  a(href='/login', title='View login page') Login
+  
+a.button(href='/articles/new') Create a New Article  

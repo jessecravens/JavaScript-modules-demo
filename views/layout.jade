@@ -1,0 +1,49 @@
+!!! 5
+!!!
+html
+  head
+    title= locals.title 
+    link(rel='stylesheet', href='/css/application.css')
+    link(rel='stylesheet', href='http://yui.yahooapis.com/3.3.0/build/cssgrids/grids-min.css')
+    script(type='text/javascript', src='/js/socket.io.js')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js')
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/yui/yui-debug.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/oop/oop.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/event-custom/event-custom.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/event/event.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/attribute/attribute.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/pluginhost/pluginhost.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/base/base.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/dom/dom.js")
+    script(type: "text/javascript", src: "http://yui.yahooapis.com/3.3.0/build/node/node.js")    
+  body
+    #main
+      #header
+      != body
+    script(type='text/javascript', src='/js/raphael.js')
+	:javascript
+		| socket = new io.Socket('localhost');
+		| socket.connect();
+		| socket.on('connect', function(){
+		|    // connected
+		| });
+		| socket.on('message', function(data){
+		|    // data here
+		| });
+		| socket.send('some data');
+	:javascript
+		| YUI().use('*', 
+		|  function(Y) {
+		|    var node = Y.one('#csjs-modules');
+		|    var node2 = Y.Node.create('<ul class="moduleList"></ul>')
+		|    node.appendChild(node2);
+		|    // var used = [];
+		|    Y.each(Y.Env._attached, function(v, k) {
+		|        // console.log(k);
+		|        // used[used.length] = k;
+		|		 var node3 = Y.Node.create('<li class="moduleListItem">' + k  + '</li>');
+		|		 node2.appendChild(node3);
+		|    });
+		|    // used.sort();
+		| });

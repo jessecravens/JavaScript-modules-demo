@@ -1,0 +1,14 @@
+h3 portals/index.jade - nodejs template engine
+#container
+#portal_container 		
+- for (var key in locals.portals)
+  p= locals.portals[key].type
+  p= locals.portals[key]._id
+  p= locals.portals[key].created_at
+  
+  // Jade pulls the Values from Memory and Prints to the Page
+   
+  
+  // I could render eval the JSON data set in the browser
+  // But I wont need to
+  // Let NodeJS build the DOM with the EntPF scripts on the Server Side

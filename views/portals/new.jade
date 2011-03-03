@@ -1,0 +1,6 @@
+.page
+  h3 New Portal
+  p
+  a.button(href='/portals') All Portals
+  form(method='post', action='/portals')
+    !=partial('portals/fields', { locals: { data: data } })

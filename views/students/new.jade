@@ -1,0 +1,13 @@
+.page
+  h3 New Student
+  p
+  form(method='post')
+	  label First Name:
+	  input(type='text', name='s[firstName]', value=locals.s.firstName || '')
+	  br
+	  label Last Name:
+	  input(type='text', name='s[lastName]', value=locals.s.lastName || '')
+	  br
+	  input(type='submit', value='Save')
+br
+a.button(href='/students') All Students
