@@ -366,7 +366,7 @@ app.get('/', function(req, res){
 	}	
 	res.render('test.jade', {
     locals: {
-		title: 'JavaScript Demo App',
+		title: 'JavaScript Module Demo App',
 		subtitle: '[ExpressJS, MongoDB, Socket.io, Jade, JSDOM, YUI3, JQuery, Raphael]',
 		modules: moduleArray	
 	}

@@ -7,13 +7,23 @@ sty = require('sty/lib/sty');
 var ArticleProvider = require('./lib/articleprovider-memory');
 var TestModule = require('./lib/testModule');
 
-// Log all require.paths
+
+
 console.info(sty.yellow('\n-require.paths-'));
 for (var key in require.paths) {
   if (require.paths.hasOwnProperty(key)) {
     console.log(sty.yellow(require.paths[key]));
   }
 }
+
+console.info(sty.red('\n-LOADED MODULES-'));
+
+for (var key in module.moduleCache) {
+  if (module.moduleCache.hasOwnProperty(key)) {
+    console.log(sty.red(module.moduleCache[key].id));
+  }
+}
+
 
 // Pass in options as a hash
 new TestModule({
